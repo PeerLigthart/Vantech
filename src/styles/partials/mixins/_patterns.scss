@@ -1,0 +1,5 @@
+@mixin patterns($name, $background: contain) {
+    background-size: #{$background};
+    background-repeat: repeat;
+    background-image: url('https://patterns.forcir.com/v1/#{$name}');
+}

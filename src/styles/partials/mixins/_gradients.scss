@@ -1,0 +1,4 @@
+@mixin app-gradient ($color) {
+    background: lighten($color, 25%);
+    background-image: linear-gradient(to bottom, lighten($color, 25%), $color);
+}
