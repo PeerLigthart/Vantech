@@ -46,89 +46,176 @@ header {
 	.feature {
 		height: 100%;
 	}
-}
 
-.inner {
+	.inner {
 
-	.title {
-		text-align: center;	
-	}
-
-	.content {
-		width: 80%;
-		margin: 0 auto;
-		line-height: 1.4;
-		color: $main-color-dark-gray - 30;
-
-		ul {
-			margin: 10px;
+		.title {
+			text-align: center;	
 		}
-	}
 
-	.image {
-		width: 100%;
-		height: 135px;
-		line-height: 135px;
-		position: relative;
-		text-align: center;
-		cursor: pointer;
+		.content {
+			width: 80%;
+			margin: 0 auto;
+			line-height: 1.4;
+			color: $main-color-dark-gray - 30;
 
-		.overlay {
+			ul {
+				margin: 10px;
+			}
+		}
+
+		.image {
 			width: 100%;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: 0;
-			background-color: rgba(0,0,0,0.5);
-			transition: opacity 0.3s ease;
-		}
+			height: 135px;
+			line-height: 135px;
+			position: relative;
+			text-align: center;
+			cursor: pointer;
 
-		&.img-1 {
-			@include patterns("1");
-		}
-
-		&.img-2 {
-			@include patterns("2");
-		}
-
-		&.img-3 {
-			@include patterns("3");
-		}
-
-		&:hover {
 			.overlay {
-				opacity: 1;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				background-color: rgba(0,0,0,0.5);
+				transition: opacity 0.3s ease;
+			}
+
+			&.img-1 {
+				@include patterns("1");
+			}
+
+			&.img-2 {
+				@include patterns("2");
+			}
+
+			&.img-3 {
+				@include patterns("3");
+			}
+
+			&:hover {
+				.overlay {
+					opacity: 1;
+				}
+
+				.number {
+					opacity: 0;
+				}
+			}
+
+			h1 {
+				color: $main-color-light-gray + 30;
+				font-size: 18px;
+				padding: 0;
+				margin: 0;
 			}
 
 			.number {
-				opacity: 0;
+				text-align: center;
+				width: 40px;
+				height: 40px;
+				background-color: $main-color-dark-gray + 20;
+				color: $main-color-light-gray + 30;
+				line-height: 40px;
+				font-size: 16px;
+				font-weight: bold;
+				border-radius: 100%;
+
+				margin: 0 auto;
+				position: relative;
+				top: calc(50% - 20px);
+				opacity: 1;
+				transition: opacity 0.3s ease;
+			}
+		}
+	}
+}
+
+.banner_wrapper {
+	background-color: rgba(0,0,0,0.8);
+	padding-top: 5px;
+
+	.img {
+
+		img {
+			max-height: 100px;
+			background-size: cover;
+		}
+	}
+	.content {
+		height: 100px;
+		display: table-cell;
+
+		h1 {
+			color: #FFF;
+		}
+	}
+}
+
+.contact_wrapper {
+	text-align: center;
+
+	.input {
+		margin-bottom: 15px;
+
+		.text, .textarea {
+			width: 40%;
+			border-radius: 3px;
+			border: 1px solid $main-color-dark-gray;
+
+			&:focus, &:active {
+				outline: 0;
 			}
 		}
 
-		h1 {
-			color: $main-color-light-gray + 30;
-			font-size: 18px;
-			padding: 0;
-			margin: 0;
+		.text {
+			height: 30px;
+			padding-left: 10px;		
 		}
 
-		.number {
-			text-align: center;
-			width: 40px;
-			height: 40px;
-			background-color: $main-color-dark-gray + 20;
-			color: $main-color-light-gray + 30;
-			line-height: 40px;
-			font-size: 16px;
-			font-weight: bold;
-			border-radius: 100%;
-
-			margin: 0 auto;
-			position: relative;
-			top: calc(50% - 20px);
-			opacity: 1;
-			transition: opacity 0.3s ease;
+		.textarea {
+			height: 200px;
+			padding-left: 8px;
+			padding-top: 5px;
 		}
 	}
+}
+
+@media only screen and (max-width: 40rem) {
+
+	.feat_wrapper {
+		width: 100% !important;
+	}
+
+	.banner_wrapper {
+		text-align: center;
+	}
+	
+}
+
+@media only screen and (max-width: 64rem) {
+
+	.banner_wrapper {
+		text-align: center;
+	}
+
+	.contact_wrapper {
+		.input {
+			.text, .textarea {
+			width: 80%;
+		}
+		}
+		
+	}
+
+}
+
+@media only screen and (min-width: 64.063rem) {
+
+	.feat_wrapper {
+		width: 100% !important;
+	}
+
 }
